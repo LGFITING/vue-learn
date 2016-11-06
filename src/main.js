@@ -6,8 +6,8 @@ import product from './components/Product.vue';
 import news from './components/News.vue';
 import service from './components/Service.vue';
 import aboutus from './components/Aboutus.vue';
-require("!style!css!sass!./App.scss");
-require("!style!css!./style.css");
+require("!style!css!sass!../static/css/App.scss");
+require("!style!css!../static/css/style.css");
 Vue.use(VueRouter);
 var router=new VueRouter();
 
