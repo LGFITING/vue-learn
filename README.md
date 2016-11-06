@@ -44,3 +44,4 @@ module:{
     ]
 }
 #在主入口文件entry.js或者main.js文件中使用 require("!style!css!sass!./file.scss");require("!style!css!./style.css");
+#备注：webpack中使用sass。需要依赖node-sass。而node-sass依赖python。所以安装钱需要确认是否安装了python。版本为2.7.安装在全局使用。
