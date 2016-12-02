@@ -6,9 +6,14 @@ import product from './components/Product.vue';
 import news from './components/News.vue';
 import service from './components/Service.vue';
 import aboutus from './components/Aboutus.vue';
+<<<<<<< HEAD
 import select from './components/Select.vue';
 require("!style!css!sass!./App.scss");
 require("!style!css!./style.css");
+=======
+require("!style!css!sass!../static/css/App.scss");
+require("!style!css!../static/css/style.css");
+>>>>>>> 518f27fe6f6de88ba9a6a9cf38040dc953d907c8
 Vue.use(VueRouter);
 var router=new VueRouter();
 
