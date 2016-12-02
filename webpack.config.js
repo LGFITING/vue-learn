@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 // var css = require("!style!css!sass!./App.scss");
-// var css = require("!style!css!./style.css");
+
 
 module.exports = {
   entry: './src/main.js',

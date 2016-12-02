@@ -6,6 +6,7 @@ import product from './components/Product.vue';
 import news from './components/News.vue';
 import service from './components/Service.vue';
 import aboutus from './components/Aboutus.vue';
+import select from './components/Select.vue';
 require("!style!css!sass!./App.scss");
 require("!style!css!./style.css");
 Vue.use(VueRouter);
@@ -26,6 +27,9 @@ router.map({
   },
   '/Aboutus':{
     component:aboutus
+  },
+  '/Select':{
+    component:select
   }
 })
 

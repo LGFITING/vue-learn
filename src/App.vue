@@ -6,12 +6,16 @@
       <a v-link="{path:'/News'}">News</a>
       <a v-link="{path:'/Service'}">Service</a>
       <a v-link="{path:'/Aboutus'}">Aboutus</a>
+      <!-- <a v-link="{path:'Select'}">Select</a> -->
       <sercharea></sercharea>
     </div>
   </div>
   <br>
-  <h1>test</h1>
-  <h2>test</h2>
+
+
+<br>
+<h1>test</h1>
+<h2>test</h2>
   <router-view keep-alive transition="fade" transition-mode='out-in'></router-view>
 </template>
 
@@ -25,13 +29,30 @@ import sercharea from './components/serch.vue';
 export default {
   data () {
     return {
+        message: 'Hello Vue!',
+        picked:'',
+        selected:'',
+        items: [
+      {message: 'foo' },
+      {message: 'Bar' }
+  ]
     }
   },
   components:{
     sercharea
-  }
+},
+methods:{
+    getContent:function(){
+        alert(this.items.message);
+    }
 }
+}
+
+
 </script>
+
+
+
 
 <style>
 *{
