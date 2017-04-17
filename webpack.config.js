@@ -1,7 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-// var css = require("!style!css!sass!./App.scss");
-
 
 module.exports = {
   entry: './src/main.js',
@@ -10,14 +8,14 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue',
+        options: {
+          // vue-loader options go here
+        }
       },
       {
         test: /\.js$/,
@@ -25,34 +23,18 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.html$/,
-        loader: 'vue-html'
-      },
-      {
-          test: /\.css$/,
-          loader: 'style!css'
-      },
-      {
-          test: /\.css$/,
-          loader: 'style,css'
-      },
-      {
-          test: /\.scss$/,
-          loader:'style!css!sass'
-      },
-      {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
+        loader: 'file',
+        options: {
           name: '[name].[ext]?[hash]'
         }
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue'
+    }
   },
   devServer: {
     historyApiFallback: true,
@@ -75,6 +57,8 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
   ])
 }

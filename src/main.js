@@ -1,49 +1,40 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import home from './components/Home.vue';
-import product from './components/Product.vue';
-import news from './components/News.vue';
-import service from './components/Service.vue';
-import aboutus from './components/Aboutus.vue';
-<<<<<<< HEAD
-import select from './components/Select.vue';
-require("!style!css!sass!./App.scss");
-require("!style!css!./style.css");
-=======
-require("!style!css!sass!../static/css/App.scss");
-require("!style!css!../static/css/style.css");
->>>>>>> 518f27fe6f6de88ba9a6a9cf38040dc953d907c8
 Vue.use(VueRouter);
-var router=new VueRouter();
+import Foo from './Foo.vue';
+import Bar from './Bar.vue';
+// const Foo = { template: '<div>foo</div>' }
 
-router.map({
-  '/Home':{
-    component:home
-  },
-  '/Product':{
-    component:product
-  },
-  '/News':{
-    component:news
-  },
-  '/Service':{
-    component:service
-  },
-  '/Aboutus':{
-    component:aboutus
-  },
-  '/Select':{
-    component:select
-  }
+// const routes = [
+//   { path: '/foo', component: Foo },
+//   { path: '/bar', component: Bar }
+// ]
+
+
+// 注册一个全局自定义指令 v-focus
+// Vue.directive('focus', {
+//   // 当绑定元素插入到 DOM 中。
+//   inserted: function (el) {
+//     // 聚焦元素
+//     el.focus()
+//   }
+// })
+Vue.component('my-component', {
+  template: '<div>一个全局组件</div>'
 })
 
-
-
-//设置默认情况下打开的页面
-router.redirect({
-  '/':'App'
-});
-router.start(App,'app');
-//暴露路由接口调试
-window.router = router;
+const router = new VueRouter({
+    routes: [
+      { path: '/foo', component: Foo },
+      { path: '/bar', component: Bar }
+    ]
+})
+// const app = new Vue({
+//   router
+// }).$mount('#app')
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
+})

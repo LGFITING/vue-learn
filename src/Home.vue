@@ -1,4 +1,4 @@
-<template class="Home">
+<template id="Home">
   <div class="wrapper">
   <div>
     {{msg}}
@@ -25,9 +25,6 @@
   }
   }
 </script>
-<style lang="sass" scoped>
-$color: yellow;
-    div{
-        color:$color;
-    }
+<style scoped>
+
 </style>
